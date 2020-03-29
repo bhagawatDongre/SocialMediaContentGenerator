@@ -9,11 +9,15 @@ Project idea : creating content for social media pages i.e news from different s
   1] What Do you need before hand 
   2] Tweeter developer account
   3] newsapi.org developer account 
-  
-  Main nodejs scripts 
+
+
+# Important nodejs scripts
+
   1] http.js: this script will create images that contain information about news collected from news api which can be                       uploaded to social media.
   2] topTweets.js: this script will create social media ready images of tweets from celebrities.
   3] trending.js: scipt creates images for tweeter trends for now.
+
+
 
 # Potential Improvements
 
