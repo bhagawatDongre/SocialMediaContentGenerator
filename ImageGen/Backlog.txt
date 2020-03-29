@@ -1,0 +1,22 @@
+New Feature :
+
+1] boxofficeIndia.com (Movie review, gross worth)
+2] Translate (Marathi)
+3] Common templeting module to create images (to be used for news template change)
+   - pick created template
+   - create image from template
+4] news template change
+5] facebook direct post api
+6] Headlines video.
+7] Cricbuzz.
+8] Blog tweets.
+
+Issue: 
+
+1] tweet video load isuue.
+2] tweet setlisner isuue.
+3] 
+
+
+Infographics image for new smart phones
+Showerthoughts
