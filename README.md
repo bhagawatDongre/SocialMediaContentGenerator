@@ -40,5 +40,5 @@ Issue:
 2] tweet setlisner isuue.
 
 
-Infographics image for new smart phones
-Showerthoughts image generation
+1] Infographics image for new smart phones
+2] Showerthoughts image generation
