@@ -10,14 +10,14 @@ async function screenShot(url = '') {
 
   const browser = await puppeteer.launch({
     executablePath: '/usr/bin/google-chrome-stable',
-    headless: true
+    headless: true,
   });
 
   const page = await browser.newPage();
   // Adjustments particular to this page to ensure we hit desktop breakpoint.
   page.setViewport({ width: 1000, height: 600, deviceScaleFactor: 1 });
 
-  await page.goto(url, { waitUntil: 'load', timeout: 0 });
+  await page.setContent(url, { waitUntil: ["load","networkidle0"]});
 
   /**
    * Takes a screenshot of a DOM element on the page, with optional padding.
@@ -72,7 +72,7 @@ async function screenShot(url = '') {
 
   await screenshotDOMElement({
     path: 'tweet/top_tweets_' + new Date().getDate() + '_' + new Date().getTime() + '.jpeg',
-    selector: '.tweet.permalink-tweet',
+    selector: '.twitter-tweet',
     padding: 0
   });
 
@@ -104,7 +104,13 @@ function handleUserResponse(screen_name) {
 
         if (is24) {
           console.log(`Creating : ${tweet.id_str}`);
-          screenShot(`https://twitter.com/RajeevMasand/status/${tweet.id_str}`);
+          T.get(
+            `https://publish.twitter.com/oembed?url=https://twitter.com/RajeevMasand/status/${tweet.id_str}`,
+            {},
+            (err, data, response) => {
+              screenShot(data.html);
+            }
+          );
         } else {
           console.log(`Skiped : ${tweet.id_str}`);
         }
